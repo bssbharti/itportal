@@ -1,38 +1,77 @@
-<%- include ../partials/_css.ejs %>
 
-<div class="container">
-    <h1>Please submit your request</h1>
-    <form action="/support/createticket" method="post">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="name" class="col-form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+  <%- include ../partials/_css.ejs %>
+
+  <%- include ../partials/_header.ejs %>
+  <%- include ../partials/_sidebar.ejs %>
+
+
+    <!-- Main content -->
+    <main class="main">
+<br>
+      <div class="container-fluid">
+
+        <div class="animated fadeIn">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <i class="icon-note"></i> Create Ticket
+                </div>
+                <div class="card-body">
+
+                  <div class="row">
+
+                    <div class="col-md-12">
+                      <form id="createTicketForm" action="/support/createticket" method="post">
+
+                        <div class="form-group">
+                          <label class="col-form-label" for="name">Name</label>
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-form-label" for="lastname">Email</label>
+                          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-form-label" for="title">Title</label>
+                          <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="description" class="col-form-label">Description</label>
+                          <textarea type="text" class="form-control" id="description" name="description"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-12">
+                            <label for="category" class="col-form-label">Category</label>
+                            <select id="inputCategory" class="form-control" name="category">
+                              <option value="support">Support</option>
+                              <option value="hardware">Hardware</option>
+                              <option value="software">Software</option>
+                              <option value="newstart">New start</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary" name="submit" value="Submit">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputEmail4" class="col-form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
-        </div>
-        
+
       </div>
-      <div class="form-group">
-        <label for="title" class="col-form-label">Title</label>
-        <input type="text" class="form-control" id="title" name="title">
-      </div>
-      <div class="form-group">
-        <label for="description" class="col-form-label">Description</label>
-        <input type="text" class="form-control" id="description" name="description">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-9">
-          <label for="category" class="col-form-label">Category</label>
-          <select id="inputCategory" class="form-control" name="category">
-            <option value="support">Support</option>
-            <option value="hardware">Hardware</option>
-            <option value="software">Software</option>
-            <option value="newstart">New start</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+      <!-- /.conainer-fluid -->
+    </main>
+
+
